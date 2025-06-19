@@ -1,0 +1,35 @@
+Find the median value of two sorted lists.
+list_A, List_B both sorted in ascending order.
+
+
+Total length: len(List_A) + len(List_B)
+Median index: m0, m1
+  if IsOdd(Total_len):
+    Median index: m0 = m1 = Total_len // 2
+  else:
+    Median index: 
+      m1 = Total_len // 2
+      m0 = m1 - 1
+
+Scenarios:
+- List_B to the left of List_A === max(List_B) <= min(List_A)
+    Swap List_B with List_A
+    continue to next step
+
+- List_A to the left of List_B === max(List_A) <= min(List_B)
+  Median:
+    if len(List_A) < m0:
+      if IsOdd(Total_len):
+        Median = List_B[m0 - len(List_A)]
+      else:
+        Median = (List_B[m0 - len(List_A)] + List_B[m1 - len(List_A)])/2
+    else:
+      
+
+- List_B contained in List_A === min(List_A) <= min(List_B) and max(List_B) <= max(List_A)  
+    Swap List_B with List_A
+    continue to next step
+      
+- List_A contained in List_B === min(List_B) <= min(List_A) and max(List_A) <= max(List_B)  
+
+

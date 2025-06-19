@@ -1,0 +1,23 @@
+## Find all anagram groups from a list of words
+
+Example:
+Given the following list of words:
+
+Arches        |     Golf
+Arcs          |     Rats
+Arts          |     Scar
+Bluest        |     Search
+Bluets        |     Star
+Bustle        |     Sublet
+Cars          |     Subtle
+Chaser        |     Tars
+              |     Tears
+
+Produce:
+- Arches, Chaser, Search
+- Arcs, Cars, Scar
+- Arts, Rats, Star, Tars
+- Bluest, Bluets, Bustle, Sublet, Subtle
+
+The words Golf and Tears should be left out, as they don't have anagram words.
+Order (sort) within the group is not required or desired.

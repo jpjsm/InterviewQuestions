@@ -1,0 +1,5 @@
+Define a function that lists all tasks in a project, in a single line, in a way that when a task is executed from the list, all pre-requisites tasks have been executed (or are listed to the left of the task, in the list). If such list cannot be constructed, the function should report it.
+
+Assume that for each task, only the immediate pre-requisites are known.
+
+What is the signature of the function 'SingleLineTaskList'?

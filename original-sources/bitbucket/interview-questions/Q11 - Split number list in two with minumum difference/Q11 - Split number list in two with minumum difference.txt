@@ -1,0 +1,27 @@
+Given a list of positive numbers (with less than 30 numbers), split the list in two sublists (A and B) where the difference between the sum of elements in each list is minimum.
+
+Example:
+Given S = {17, 23, 31, 37, 41}
+
+Produce
+A = { 41, 31 }
+B = { 37, 23, 17 }
+
+Given S = { 4, 5, 6, 7, 8, 9, 10, 11 }
+
+Produce
+A = {4, 6, 9, 11 }
+B = { 5, 7, 8, 10 }
+
+Given S = { 1, 2, 3, 4, 100 }
+
+Produce
+A = { 100 }
+B = { 1, 2, 3, 4 }
+
+Given S = {4, 5, 6, 7, 8}
+
+Produce
+A = { 7, 8 }
+B = { 4, 5, 6 }
+

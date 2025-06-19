@@ -1,0 +1,4 @@
+Given an integer type number 
+Return the bit representation of the number
+
+Num2Bit(n) --> str

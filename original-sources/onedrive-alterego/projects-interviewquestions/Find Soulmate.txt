@@ -1,0 +1,28 @@
+Let's assume we're building a new match site, that lets you find your soul mate, based on 100% match of your profile (qualities, tastes, hobbies, preferences, etc). 
+
+A profiling test is applied to every candidate and the identified characteristics are stored with the candidate profile. 
+
+The profile test consists of 59 questions, of Yes/No type.
+
+Every candidate is identified with a unique integer (int64), the candidate Id. 
+
+No personal information (age, sex, religion, marital status, etc.) is asked or stored with the profile.
+
+The matching is based only on the profile questions, and 100% match of the answers is required to match a candidate to an un-matched customer.
+
+
+This is a coding interview
+--------------------------
+State clearly in which programming language you'd be writing your code.
+
+Start defining the data structure you would use for customers (a candidate is just a customer that hasn't been matched for the first time).
+
+Define the data structure of the pool of unmatched customers.
+
+Define the data structure of the pool of matched customers.
+
+Write procedure 'ProcessCandidate(candidate, UnmatchedPool, MatchedPool)' that finds an exact match for the candidate from the pool of unmatched customers; if a match is found move the new pair to the matched pool, otherwise add the candidate to the unmatched pool (so it can be found in the future). If the given procedure's signature doesn't fit the bill in your chosen language, adjust the signature to your language and explain.
+
+
+Don't assume to much, explain everything you need.
+

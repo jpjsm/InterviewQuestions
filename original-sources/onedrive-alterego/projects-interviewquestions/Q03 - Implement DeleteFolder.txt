@@ -1,0 +1,38 @@
+## Delete all files and folder inside a given folder. 
+## -  Any files inside a subfolder will have to be deleted as well.
+
+## You are working on the implementation of a new OS. 
+## Your team has completed the functions to: 
+## -  list all filesystem objects at the given path: listfiles(<file-path>)
+## -  delete a file from the filesystem: deletefile(<file-path>)
+## -  delete an empty folder from the filesystem deleteemptyfolder(<folder-path>)
+## -  check if path is file: isfile(<file-path>)
+## -  check if path is folder: isfolder(<file-path>)
+
+
+
+deleteFolder(string path)
+{
+    //ToDo: validate path
+    if (!isfolder(path))
+    throw error;
+     
+     var folderStack = new Stack<string>();
+     folderStack.push(path)
+      var folderStack2
+     while(!folderStack.IsEmpty())
+     {  
+         var p = folderStack.pop();
+         var files = listfiles(p);
+         folderStack2.push(p);
+         foreach(var subpath in files)
+         {
+             if(isfile(subpath))
+                deletefile(subpath);
+            else if (isfolder(subpath))
+                folderStack.push(subpath);
+         }
+     }
+
+     delete all empty folder from folderStack2;
+}

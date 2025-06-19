@@ -1,0 +1,7 @@
+## Integer division
+## Assume your processor doesn't have an instruction for integer division
+
+Your processor only has this operations and comparisons
+add, substract, shift left/right, ==, !=, >, >=, <, <=
+
+

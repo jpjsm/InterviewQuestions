@@ -1,0 +1,68 @@
+## Find all anagram groups from a list of words
+
+Example:
+Given the following list of words:
+
+Arches
+Arcs
+Arts
+Bluest
+Bluets
+Bustle
+Cars
+Chaser
+Golf
+Rats
+Scar
+Search
+Star
+Sublet
+Subtle
+Tars
+Tears
+
+Produce:
+- Arches, Chaser, Search
+- Arcs, Cars, Scar
+- Arts, Rats, Star, Tars
+- Bluest, Bluets, Bustle, Sublet, Subtle
+
+The words Golf and Tears should be left out, as they don't have anagram words.
+Order (sort) within the group is not required or desired.
+
+int[] getOccurrence(char[] s)
+{
+    int[] result = new Array<int>(26);//initialize int Array with default value 0
+    foreach(var c in s)
+    {
+        result[c.toLowerCase() - 'a']++;
+    }
+    return result;
+}
+
+bool compare(int[] r1, int[] r2)
+{
+    for(int i = 0; i < r1.Count; i++)
+    {
+        if (r1[i] != r[2]) 
+            return false;
+    }
+    return true;
+}
+
+
+void groupAnagram(string[] inputs)
+{
+  var result = new Dicionary<int[], List<string>>(); //"a:"
+  var occurences = inputs.Select(x => getOccurence(x))
+  for(int i = 0; i < inputs.Count; i++)
+  {
+      if (!result.HasKey(occurences.get(i)))
+      {
+          result[occurences.get(i)] = new List<string>();
+      }
+      result[occurences.get(i)].Add(inputs[i]);
+  }
+  //print result if result.value.Count > 1
+}
+

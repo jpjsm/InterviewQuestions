@@ -1,0 +1,10 @@
+Write a function that given a number N, it returns all possible ways to write N as the sum of all positive numbers.
+
+For example, given N = 4
+
+The answers will be
+- 4
+- 3 + 1
+- 2 + 2
+- 2 + 1 + 1
+- 1 + 1 + 1 + 1

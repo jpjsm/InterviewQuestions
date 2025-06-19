@@ -1,0 +1,49 @@
+## Find all compound words and its roots
+
+Given a list of ordered words, find all words that are compound
+from other two (2) words in the list.
+
+Example:
+Given the following list of words:
+
+a         | dog       | mail        | rock
+air       | doghouse  | mailman     | run
+airplane  | down      | make        | said
+and       | end       | man         | see
+angel     | find      | me          | skate
+away      | for       | mid         | skateboard
+ball      | funny     | midnight    | take
+big       | go        | moon        | takedown
+blue      | guard     | moonrock    | takeout
+boa       | help      | my          | the
+board     | here      | night       | three
+boardwalk | horse     | not         | to
+body      | horseplay | one         | two
+bodyguard | house     | out         | up
+can       | i         | pay         | walk
+cart      | in        | paycheck    | we
+cartwheel | is        | plane       | wheel
+check     | it        | play        | where
+come      | jump      | racquet     | yellow
+dead      | little    | racquetball | you
+deadend   | look      | red       
+
+
+Produce:
+-  takedown: take, down
+-  deadend: dead, end
+-  doghouse: dog, house
+-  skateboard: skate, board
+-  takeout: take, out
+-  horseplay: horse, play
+-  moonrock: moon, rock
+-  paycheck: pay, check
+-  cartwheel: cart, wheel
+-  boardwalk: board, walk
+-  racquetball: racquet, ball
+-  bodyguard: body, guard
+-  mailman: mail, man
+-  midnight: mid, night
+-  airplane: air, plane
+
+The results don't need to sorted.

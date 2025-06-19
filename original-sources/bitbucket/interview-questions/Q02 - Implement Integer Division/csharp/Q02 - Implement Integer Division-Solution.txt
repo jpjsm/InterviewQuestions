@@ -1,0 +1,29 @@
+## Integer division
+## Assume your processor doesn't have an instruction for integer division
+
+Your processor only has this operations and comparisons
+add, substract, shift left/right, ><=
+
+
+int division(int n1, int n2)//return int value of n1/n2
+{
+    if (n2 == 0) throw error
+    if (n1 == 0) return 0;
+    bool minus = n1 < 0 || n2 < 0;
+    if (n1 < 0 && n2< 0)
+      minus = true;
+      n1 = abs(n1);
+      n2 = abs(n2);
+     if (n1 < n2) return 0;
+     
+     int result = 0;
+     while( n1 > n2)
+     {
+         result ++;
+         n1 -= n2;
+         
+     }
+
+     return minus ? -1 * result : result;
+
+}

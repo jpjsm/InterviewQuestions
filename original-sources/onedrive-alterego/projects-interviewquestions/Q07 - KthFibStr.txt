@@ -1,0 +1,39 @@
+The Fibonacci strings are a series of recursively defined strings, where FibStr(n) = FibStr(n-2) '+' FibStr(n-1) 
+
+Let's assume:
+-  FibStr(0) = 'a'
+-  FibStr(1) = 'bc'
+
+Then:
+- FibStr(2) = 'abc'
+- FibStr(3) = 'bcabc'
+
+Write a function that given a number n and an index k, returns the kth character ofthe string FibStr(n).
+
+As an example:
+KthFibStr(0,0) = a
+KthFibStr(1,0) = b
+KthFibStr(1,1) = c
+KthFibStr(2,0) = a
+KthFibStr(2,1) = b
+KthFibStr(2,2) = c
+KthFibStr(3,0) = b
+KthFibStr(3,1) = c
+KthFibStr(3,2) = a
+KthFibStr(3,3) = b
+KthFibStr(3,4) = c
+KthFibStr(4,0) = a
+KthFibStr(4,1) = b
+KthFibStr(4,2) = c
+KthFibStr(4,3) = b
+KthFibStr(4,4) = c
+KthFibStr(4,5) = a
+KthFibStr(4,6) = b
+KthFibStr(4,7) = c
+
+
+
+
+
+
+KthFibStr(50, 133) = a

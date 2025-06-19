@@ -1,0 +1,40 @@
+Given a list of cities and population (in millions), return a random city name based on population weight.
+
+Function signature:
+RandomState()
+- returns string with state name
+
+Assume your input is a list with the information in the following table:
+ 
+City     | Population 
+         | (millions) 
+---------+------------
+Alpha    |      1     
+Bravo    |      2     
+Charlie  |      4     
+Delta    |      8     
+Echo     |     16     
+Foxtrot  |     32     
+
+If you run your random function a thousand times and collect the frequencies 
+for the labels, you should get results similar to this output:
+
+('Alpha',     15)
+('Bravo',     24)
+('Charlie',   73)
+('Delta',    125)
+('Echo',     245)
+('Foxtrot',  518)
+
+The results, above, make sense once you calculate the percentage of the cities 
+population weight when compared to the total population.
+
+City     | Population | Pct Weight
+         | (millions) |
+---------+------------+------------
+Alpha    |      1     |     1.6%
+Bravo    |      2     |     3.2%
+Charlie  |      4     |     6.3%
+Delta    |      8     |    12.7%
+Echo     |     16     |    25.4%
+Foxtrot  |     32     |    50.8%

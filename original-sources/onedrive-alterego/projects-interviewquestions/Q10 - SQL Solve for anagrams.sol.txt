@@ -1,0 +1,105 @@
+CREATE TYPE dbo.Letter2Prime  
+    AS TABLE  
+    (  
+        language  NCHAR(3) NOT NULL,  
+        letter    NCHAR(1) NOT NULL,
+        prime     BIGINT   NOT NULL   
+    )  
+    WITH  
+        (MEMORY_OPTIMIZED = ON);
+GO
+
+ALTER TABLE dbo.Letter2Prime
+   ADD CONSTRAINT PK_Letter2Prime 
+   PRIMARY KEY NONCLUSTERED (language, letter, prime);
+GO
+
+INSERT INTO dbo.Letter2Prime VALUES
+('EN', 'e', 2),
+('EN', 't', 3),
+('EN', 'a', 5),
+('EN', 'o', 7),
+('EN', 'i', 11),
+('EN', 'n', 13),
+('EN', 's', 17),
+('EN', 'h', 19),
+('EN', 'r', 23),
+('EN', 'd', 29),
+('EN', 'l', 31),
+('EN', 'c', 37),
+('EN', 'u', 41),
+('EN', 'm', 43),
+('EN', 'w', 47),
+('EN', 'f', 53),
+('EN', 'g', 59),
+('EN', 'y', 61),
+('EN', 'p', 67),
+('EN', 'b', 71),
+('EN', 'v', 73),
+('EN', 'k', 79),
+('EN', 'j', 83),
+('EN', 'x', 89),
+('EN', 'q', 97),
+('EN', 'z', 101),
+('ES', 'e', 2),
+('ES', 'é', 2),
+('ES', 'a', 3),
+('ES', 'á', 3),
+('ES', 'o', 5),
+('ES', 'ó', 5),
+('ES', 's', 7),
+('ES', 'n', 11),
+('ES', 'ñ', 11),
+('ES', 'i', 13),
+('ES', 'í', 13),
+('ES', 'r', 17),
+('ES', 'd', 19),
+('ES', 'l', 23),
+('ES', 't', 29),
+('ES', 'c', 31),
+('ES', 'm', 37),
+('ES', 'u', 41),
+('ES', 'ú', 41),
+('ES', 'ü', 41),
+('ES', 'p', 43),
+('ES', 'b', 47),
+('ES', 'g', 53),
+('ES', 'v', 59),
+('ES', 'y', 61),
+('ES', 'q', 67),
+('ES', 'h', 71),
+('ES', 'f', 73),
+('ES', 'j', 79),
+('ES', 'z', 83),
+('ES', 'x', 89),
+('ES', 'w', 97),
+('ES', 'k', 101);
+
+GO
+
+CREATE FUNCTION dbo.WordHash(
+   @word NVARCHAR(15),
+   @language NCHAR(3)
+)
+RETURNS BIGINT
+AS
+BEGIN
+   DECLARE @ret BIGINT= 1
+   DECLARE @I INT = 1
+   DECLARE @LEN INT = SELECT LEN(@word)
+   WHILE @I <= @LEN
+   BEGIN
+      SELECT @ret = @ret * prime
+      FROM dbo.Letter2Prime
+      WHERE language = @language
+        AND letter = SUBSTRING( @WORD, @I, 1)
+      SELECT @I = @I + 1
+   END
+   RETURN @ret
+END
+GO
+
+// ###### TEST ######
+SELECT language, dbo.WordHash(word, language) AS [Anagram Group], word
+FROM WORDS 
+ORDER BY language, dbo.WordHash(word, language)

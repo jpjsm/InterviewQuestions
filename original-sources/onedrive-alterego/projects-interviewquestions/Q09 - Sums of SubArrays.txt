@@ -1,0 +1,11 @@
+Given an array A of size n, of numbers (you can assume integers), find the sums of all  contiguous subarrays of size k, where k < n.
+
+Function signature:
+SumsOfSubarrays(array A, int k)
+- returns an array with the sums of each subarray of size k 
+
+for example
+A = {1, 6, 2, 5, 3, 4}
+k =3
+
+SumsOfSubarrays => {9, 13, 10, 12}

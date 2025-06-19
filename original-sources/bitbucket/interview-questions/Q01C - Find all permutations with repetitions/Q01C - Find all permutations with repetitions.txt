@@ -1,0 +1,76 @@
+Given a set of items, or list of items without repetitions.
+Generate all permutations of size N for the elements of the set with repetitions.
+
+Function signature:
+PermutationsWithRepetitions(set, size)
+- returns a list of arrays, where each array represents a permutation of the elements of the set.
+
+Executing:
+PermutationsWithRepetitions({'!', '@', '#', '$'}, 3)
+
+Should produce the following result:
+
+! ! ! 
+@ ! ! 
+# ! ! 
+$ ! ! 
+! @ ! 
+@ @ ! 
+# @ ! 
+$ @ ! 
+! # ! 
+@ # ! 
+# # ! 
+$ # ! 
+! $ ! 
+@ $ ! 
+# $ !
+$ $ !
+! ! @
+@ ! @
+# ! @
+$ ! @
+! @ @
+@ @ @
+# @ @
+$ @ @
+! # @
+@ # @
+# # @
+$ # @
+! $ @
+@ $ @
+# $ @
+$ $ @
+! ! #
+@ ! #
+# ! #
+$ ! #
+! @ #
+@ @ #
+# @ #
+$ @ #
+! # #
+@ # #
+# # #
+$ # #
+! $ #
+@ $ #
+# $ #
+$ $ #
+! ! $
+@ ! $
+# ! $
+$ ! $
+! @ $
+@ @ $
+# @ $
+$ @ $
+! # $
+@ # $
+# # $
+$ # $
+! $ $
+@ $ $
+# $ $
+$ $ $
