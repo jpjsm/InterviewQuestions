@@ -7,6 +7,7 @@ public class StringUtilsTests
     [InlineData("abracadabra","123", "")]
     [InlineData("abracadabra","abc", "brac")]
     [InlineData("aaaaaaaaaabbbbbbbbbbcccccccccc","abc", "abbbbbbbbbbc")]
+    [InlineData("aaaaaaaaaabbbbbbbbbbccccccccccab","abc", "cab")]
     public void ShortestSubstringContainingTests(string txt, string chars, string expected)
     {
         HashSet<char> charsset = [.. chars];

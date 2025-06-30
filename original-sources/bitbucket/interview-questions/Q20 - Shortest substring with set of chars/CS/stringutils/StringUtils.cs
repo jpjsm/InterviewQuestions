@@ -10,7 +10,7 @@ public static class StringUtils
         int minlen = right - left + 1;
         bool foundAll = false;
         int substringlen = txt.Length - 1;
-        for (int i = 0; i < txt.Length - chars.Count; i++)
+        for (int i = 0; i < txt.Length - chars.Count+1; i++)
         {
             HashSet<char> charsFound = new HashSet<char>();
             substringlen = txt.Length - 1;
