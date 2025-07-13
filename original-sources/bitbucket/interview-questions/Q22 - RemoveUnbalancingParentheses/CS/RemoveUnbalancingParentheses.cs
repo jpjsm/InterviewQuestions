@@ -7,11 +7,12 @@ class Program
         Console.WriteLine("Begin Task");
         (string input, string output)[] TestCases = new (string input, string output)[]
             { 
-                ("3. hi, Hello)))", "3. hi, Hello"),
-                ("5. hi, (H)(e)((l)((l)o", "5. hi, (H)(e)((ll))o"),
                 ("1. hi,(H(e)l)lo)", "1. hi,(H(e)l)lo"),
                 ("2. hi,(((( Hello", "2. hi, Hello"),
+                ("3. hi, Hello)))", "3. hi, Hello"),
                 ("4. (h(i,)) (H)(e)((l(l(o))))", "4. (h(i,)) (H)(e)((l(l(o))))"),
+                ("5. hi, (H)(e)((l)((l)o", "5. hi, (H)(e)((l)l)o"),
+                ("5. hi, ((H)(e)((l)((l)o", "5. hi, ((H)(e)(l)l)o"),
             };
         foreach ((string input, string output) in TestCases)
         {
@@ -28,7 +29,8 @@ class Program
         int charIndex = 0;
         while (charIndex < newText.Length)
         {
-            switch (newText[charIndex])
+            char indexChar = newText[charIndex];
+            switch (indexChar)
             {
                 case '(':
                     balance++;
@@ -40,6 +42,7 @@ class Program
                     {
                         newText = newText.Remove(charIndex, 1);
                         balance++;
+                        continue;
                     }
                     break;
                 default:
@@ -55,9 +58,11 @@ class Program
             charIndex = newText.Length - 1;
             while (balance > 0 && charIndex >= 0)
             {
-                if (newText[charIndex] == '(')
+                char indexChar = newText[charIndex];
+                if (indexChar == '(')
                 {
-                    newText = newText.Remove(charIndex, 1);
+                    string tmpText = newText.Remove(charIndex, 1);
+                    newText = tmpText;
                     balance--;
                 }
 
