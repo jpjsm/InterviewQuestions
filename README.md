@@ -1,5 +1,7 @@
 # Interview Questions
 
+## Introduction
+
 This is the place where I have collected most of the interview questions
 that I had asked to candidates, or that have been asked to me as a candidate.
 
@@ -21,13 +23,28 @@ they differ from the original in any of the sources.
 I'll do my best to search in my sources and give proper credit to the authors while
 reorganizing this repo.
 
-## Bibliography
+Here's the list of books on interviews, problem solving, and textbooks used to get interview
+questions: [Bibliography](./bibliography.md)
 
-| Title | Author(s) | Other details |
-| :-- | :-: | :- |
-| Algorithmic Puzzles | Anany Levitin; Maria Levitin | ISBN: 9780199740444, ©2011|
-| Mazes for Programmers | James Buck | ISBN: 9781680500554, ©2015 |
-| Algorithms For Interviews | Adnan Aziz; Amit Prakash | ISBN: 9781453792995, ©2010 |
-| Cracking the Coding Interview | Gayle Laakmann McDowell | ISBN: 9780984782802, ©2008 ~ 2012, 5th Edition |
+## The Questions
+
+### [Q00 Weighted Random](Q00-WeightedRandom/Q00-WeightedRandom.txt)
+
+Given a list of cities and population (in millions), return a random city name based on population weight.
+
+### [Q01A Find Anagrams](Q01A-FindAnagrams/Q01-FindAnagrams.txt)
+
+Find all anagram groups from a list of words
+
+### [Q01B Find palindromes and almost palindromes]()
+
+Find which words from a given list are palindromes.
+
+What changes need to be done to the IsPalindrome method to test if a word is almost palindrome. An almost palindrome is a word that would be a palindrome if one character is removed.
+
+### [Q01C Find all permutations with repetitions](Q01C-Findallpermutationswithrepetitions/Q01C-Findallpermutationswithrepetitions.txt)
+
+Given a set of items, or list of items without repetitions.
+Generate all permutations of size N for the elements of the set with repetitions.
 
 

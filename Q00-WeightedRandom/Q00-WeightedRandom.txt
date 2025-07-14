@@ -1,8 +1,8 @@
 Given a list of cities and population (in millions), return a random city name based on population weight.
 
 Function signature:
-RandomState()
-- returns string with state name
+RandomCity()
+- returns string with city name
 
 Assume your input is a list with the information in the following table:
  
