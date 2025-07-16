@@ -33,7 +33,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\binarytree\binarytree.csproj" />
+    <ProjectReference Include="..\ClosestValueToTargetInBTree\ClosestValueToTargetInBTree.csproj" />
   </ItemGroup>
 
 </Project>
