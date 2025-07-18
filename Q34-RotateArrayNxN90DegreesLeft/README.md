@@ -1,5 +1,7 @@
 # Rotate Array NxN 90 Degrees Left
 
+> source: *Cracking the Coding Interview*, Gayle Laakmann McDowell, ISBN: 9870984782802, Question 1.6
+
 Given an N by N (squared) array, of 32 bit integers,
 rotate the array 90 degrees left.
 
