@@ -89,7 +89,6 @@ namespace RemoveDuplicatesFromLinkedList
 
             previous.Next = null;
         }
-
     }
 }
 
