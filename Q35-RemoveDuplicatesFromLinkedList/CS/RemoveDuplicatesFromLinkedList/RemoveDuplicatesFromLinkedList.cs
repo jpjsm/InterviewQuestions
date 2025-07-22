@@ -1,4 +1,4 @@
-using System.Transactions;
+﻿using System.Transactions;
 
 namespace RemoveDuplicatesFromLinkedList
 {
@@ -88,6 +88,30 @@ namespace RemoveDuplicatesFromLinkedList
             }
 
             previous.Next = null;
+        }
+
+        public char NthToLast(int n)
+        {
+            // if list empty or length < n throw exception
+            if (_head == null) throw new Exception("Empty list.");
+            int i = 0;
+            Link? runner = _head;
+            Link? current = runner;
+            while (runner != null && i < n)
+            {
+                runner = runner.Next;
+                i++;
+            }
+
+            if (i < n) throw new Exception($"List is shorter than 'n': {i} < {n}.");
+
+            while (runner != null)
+            {
+                runner = runner.Next;
+                current = current.Next; 
+            }
+            
+            return current.Value;
         }
     }
 }
