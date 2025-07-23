@@ -1,0 +1,30 @@
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.5.2.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GetNthToLastFromLinkedList", "GetNthToLastFromLinkedList\GetNthToLastFromLinkedList.csproj", "{260038C2-5CC5-C2DD-0CDB-B041189F0618}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GetNthToLastFromLinkedList.test", "GetNthToLastFromLinkedList.test\GetNthToLastFromLinkedList.test.csproj", "{859026D9-12C6-8067-8B80-E4F6751A003B}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{260038C2-5CC5-C2DD-0CDB-B041189F0618}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{260038C2-5CC5-C2DD-0CDB-B041189F0618}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{260038C2-5CC5-C2DD-0CDB-B041189F0618}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{260038C2-5CC5-C2DD-0CDB-B041189F0618}.Release|Any CPU.Build.0 = Release|Any CPU
+		{859026D9-12C6-8067-8B80-E4F6751A003B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{859026D9-12C6-8067-8B80-E4F6751A003B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{859026D9-12C6-8067-8B80-E4F6751A003B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{859026D9-12C6-8067-8B80-E4F6751A003B}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {3177D228-BD86-423D-94AF-4BA5AAC4AEF0}
+	EndGlobalSection
+EndGlobal
