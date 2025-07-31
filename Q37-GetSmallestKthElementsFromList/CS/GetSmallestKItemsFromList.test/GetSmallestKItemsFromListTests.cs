@@ -18,7 +18,7 @@ public class GetSmallestKItemsFromListTests
     }
 
     [Fact]
-    public void PythagoreanTripletsTest()
+    public void PythagoreanTripletsAscendingOrderTest()
     {
         Point[] expected = [
             new Point(11, 60),
@@ -31,10 +31,35 @@ public class GetSmallestKItemsFromListTests
             new Point(5, 12),
             new Point(3, 4),
         ];
-        Point[] actual = ListUtils.GetSmallestKItemsFromList(PythagoreanTriplets, 9);
+        expected = expected.OrderBy(p => p.X).ThenBy(p => p.Y).ToArray();
+        Point[] actual = ListUtils.GetSmallestKItemsFromList(PythagoreanTriplets, 9).OrderBy(p => p.X).ThenBy(p => p.Y).ToArray();
         Assert.Equal(expected, actual);
     }
 
+
+    [Fact]
+    public void PythagoreanTripletsDescendingOrderTest()
+    {
+        Point[] expected = (new Point[]{
+            new Point(11, 60),
+            new Point(28, 45),
+            new Point(9, 40),
+            new Point(12, 35),
+            new Point(20, 21),
+            new Point(7, 24),
+            new Point(8, 15),
+            new Point(5, 12),
+            new Point(3, 4),
+        }).OrderBy(p => p.X).ThenBy(p => p.Y).ToArray();
+
+        Point[] input = PythagoreanTriplets.OrderByDescending(p => p.X).ThenByDescending(p => p.Y).ToArray();
+
+        Point[] actual = ListUtils.GetSmallestKItemsFromList(input, 9)
+                                    .OrderBy(p => p.X)
+                                    .ThenBy(p => p.Y)
+                                    .ToArray();
+        Assert.Equal(expected, actual);
+    }
 
 
     static Point[] PythagoreanTriplets = [
