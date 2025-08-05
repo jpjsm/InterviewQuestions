@@ -1,0 +1,50 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v8.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v8.0": {
+      "EvaluateGetSmallestKItemsFromList/1.0.0": {
+        "dependencies": {
+          "GetSmallestKItemsFromList": "1.0.0",
+          "HeapSort": "1.0.0"
+        },
+        "runtime": {
+          "EvaluateGetSmallestKItemsFromList.dll": {}
+        }
+      },
+      "GetSmallestKItemsFromList/1.0.0": {
+        "dependencies": {
+          "HeapSort": "1.0.0"
+        },
+        "runtime": {
+          "GetSmallestKItemsFromList.dll": {}
+        }
+      },
+      "HeapSort/1.0.0": {
+        "runtime": {
+          "HeapSort.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "EvaluateGetSmallestKItemsFromList/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "GetSmallestKItemsFromList/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "HeapSort/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}

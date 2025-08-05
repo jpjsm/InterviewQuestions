@@ -1,11 +1,11 @@
 namespace jpjsm.GetSmallestKItemsFromList;
 
-public struct Point
+public class Point
 {
     private readonly double _x;
     private readonly double _y;
-    public readonly double X => _x;
-    public readonly double Y => _y;
+    public double X => _x;
+    public double Y => _y;
 
     public Point(double x, double y)
     {
