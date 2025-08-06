@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31903.59
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ArithExpressionEvaluator", "ArithExpressionEvaluator\ArithExpressionEvaluator.csproj", "{B6E05515-FA09-4AA5-90D0-6798CC1FB705}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ArithExpressionEvaluator.test", "ArithExpressionEvaluator.test\ArithExpressionEvaluator.test.csproj", "{53BCB6F9-DDF9-44AD-8880-40A3830C5669}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B6E05515-FA09-4AA5-90D0-6798CC1FB705}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B6E05515-FA09-4AA5-90D0-6798CC1FB705}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B6E05515-FA09-4AA5-90D0-6798CC1FB705}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B6E05515-FA09-4AA5-90D0-6798CC1FB705}.Release|Any CPU.Build.0 = Release|Any CPU
+		{53BCB6F9-DDF9-44AD-8880-40A3830C5669}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{53BCB6F9-DDF9-44AD-8880-40A3830C5669}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{53BCB6F9-DDF9-44AD-8880-40A3830C5669}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{53BCB6F9-DDF9-44AD-8880-40A3830C5669}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
