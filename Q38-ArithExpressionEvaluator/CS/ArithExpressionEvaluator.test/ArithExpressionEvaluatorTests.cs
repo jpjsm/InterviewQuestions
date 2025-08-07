@@ -28,4 +28,15 @@ public class ArithExpressionEvaluatorTests
     {
         Assert.Equal(expected, ExpressionEvaluator.PrefixExpression(expression));
     }
+
+    [Theory]
+    [InlineData("( + 1 2 )", 3)]
+    [InlineData("( + 1 ( * 2 3 ) )", 7)]
+    [InlineData("( * ( + 1 2 ) 3 )", 9)]
+    [InlineData("( * ( + 1 2 ) ( * 3 4 ) )", 36)]
+    [InlineData("( * ( * ( + 1 2 ) ( * 3 4 ) )  2 )", 72)]
+    public void PrefixExpression2Tests(string expression, long expected)
+    {
+        Assert.Equal(expected, ExpressionEvaluator.PrefixExpression2(expression));
+    }
 }
