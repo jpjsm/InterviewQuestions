@@ -4,6 +4,7 @@ SumsOfN = {}
 SumsOfN[0] = []
 SumsOfN[1] = [[1]]
 
+
 def GenerateSumsOfN(N):
     n = int(N)
     if n in SumsOfN:
@@ -11,18 +12,18 @@ def GenerateSumsOfN(N):
 
     results = [[n]]
     duplicate_check = set()
-    for i in range(1,n):
+    for i in range(1, n):
         for r in GenerateSumsOfN(i):
             if len(r) == 1:
-                c = [r[0], n-i]
+                c = [r[0], n - i]
             else:
-                c = r + [n-i]
+                c = r + [n - i]
 
             check = "_".join([str(x) for x in sorted(c)])
-            if  check not in duplicate_check:
-                results += [r + [n-i]]
+            if check not in duplicate_check:
+                results += [r + [n - i]]
                 duplicate_check.add(check)
-    
+
     if n not in SumsOfN:
         SumsOfN[n] = results
 
@@ -31,6 +32,14 @@ def GenerateSumsOfN(N):
 
 if __name__ == "__main__":
     print("... starting ...")
+    n = 6
 
-    for i in range(1,8):
-        print("Sums of {0}: {1}".format(i, GenerateSumsOfN(i)))
+    results = GenerateSumsOfN(n)
+    rs = []
+
+    for r in results:
+        rs.append(sorted(r, reverse=True))
+
+    for r in sorted(rs, reverse=True):
+        print(" + ".join([str(x) for x in r]))
+    print("... done ...")
