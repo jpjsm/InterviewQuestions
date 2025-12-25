@@ -1,4 +1,4 @@
-# ArithExpressionEvaluator
+# Arith Expression Evaluator
 
 ## Prefix notation
 
