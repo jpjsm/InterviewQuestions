@@ -7,6 +7,7 @@ found.
 For example:
 
 List: [ "12", "123", "312", "1412", "012", "4321"]
+
 Key: "1212"
 
 Answer:
