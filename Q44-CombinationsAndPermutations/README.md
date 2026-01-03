@@ -10,4 +10,4 @@ If length is zero, permutations should be for all items.
 ## Combinations
 
 Write function that returns all combinations, of length 'n', from the members
-of a list of items`. If length is zero, permutations should be for all items.
+of a list of items.
