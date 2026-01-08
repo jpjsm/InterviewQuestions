@@ -10,13 +10,13 @@ T = TypeVar("T")
 class LinkList(Generic[T]):
     def __init__(self, list: Link[T], next: Optional["LinkList[T]"] = None):
         self.List: Link[T] = list
-        self.Next: LinkList | None = next
+        self.Next: LinkList[T] | None = next
 
     @staticmethod
     def Zip(list: LinkList[Link[T]]) -> LinkList[T] | None:
         # extract pointers to each sub-list in list
         l = list
-        pointers: Link[Any] = Link()
+        pointers: Link[T] = Link()
         p = pointers
         while l:
             p.Value = l.List
