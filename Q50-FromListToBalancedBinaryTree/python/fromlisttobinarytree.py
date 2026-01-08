@@ -11,6 +11,14 @@ class Node:
 
 
 def FromListToBinaryTree(l) -> Node | None:
+    """Converts a "sorted" list into a balanced binary tree.
+
+    Args:
+        l (Any type): a "sorted" list
+
+    Returns:
+        Node | None: A balanced binary tree
+    """
     if l is None or not isinstance(l, (list, tuple)):
         return None
 
@@ -25,6 +33,16 @@ def FromListToBinaryTree(l) -> Node | None:
 
 
 def GenerateDagEdges(node: Node) -> list:
+    """Generates a list of tuples: (Parent_value, Child_value); each tuple
+    representes an edge in the tree.
+
+    Args:
+        node (Node): The parent node to generate the edge tuples, if left or
+        right nodes exist.
+
+    Returns:
+        list: The list of (Parent_value, Child_value) tuples
+    """
     if node is None:
         return []
 
