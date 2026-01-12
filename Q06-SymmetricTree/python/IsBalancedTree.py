@@ -1,43 +1,77 @@
 #!/usr/bin/env python3
+from __future__ import annotations
+from typing import List
 
-def IsPalindromic(l):
-    half = int(len(l)/2)
-    for i in range(0,half + 1):
-        if l[i] != l[len(l)-1-i]:
-            return False
-    return True
 
-class Node(object):
-    def __init__(self, value, parent=None, children=[]):
+class Node:
+    def __init__(self, value):
         self.Value = value
 
-        self.Children = []
-        
-        if children is not None:
-            if not isinstance(children, list):
-                raise ValueError("'children' must be a list.")
+        self.Lnode = None
+        self.Rnode = None
 
-            if len(children) > 0 and not all(isinstance(c, Node) for c in children):
-                raise ValueError("All 'children' items must be of Node type.")
+    @staticmethod
+    def IsSymmetric(node: Node) -> bool:
+        def mirror(l, r):
+            if l is None and r is None:
+                return True
+            if l is None or r is None:
+                return False
 
-            self.Children = children
-        
-        self.Parent = None
-        if parent is not None and not isinstance(parent, Node):
-            raise ValueError("'parent' must be of Node type.")
+            return (
+                l.Value == r.Value
+                and mirror(l.Lnode, r.Rnode)
+                and mirror(l.Rnode, r.Lnode)
+            )
 
-        self.Parent = parent
+        return mirror(node.Lnode, node.Rnode)
+
+    def IsPalindromicTree(self) -> bool:
+        def _IsPalindromic(l):
+            half = len(l) >> 1  # fast divide by 2
+            for i in range(0, half + 1):
+                if l[i] != l[len(l) - 1 - i]:
+                    return False
+            return True
+
+        def _Split(node: Node) -> List[str]:
+            if node is None:
+                return []
+
+            if not isinstance(node, Node):
+                raise ValueError("'node'argument must be of Node type")
+
+            return _Split(node.Lnode) + [str(node.Value)] + _Split(node.Rnode)
+
+        items = _Split(self)
+        return _IsPalindromic(items)
 
 
-if (__name__ == "__main__"):
-  print("... starting ...")
-  for l in [ "abcba", [2,3,5,7,11,13,11,7,5,3,2],"hello",["hello","world","hello"],[0],["hello"]]:
-    print("{0} is palindromic: {1}".format(l, IsPalindromic(l)))
+if __name__ == "__main__":
+    print("... starting ...")
+    l_5 = Node(5)
+    l_4 = Node(4)
+    l_4.Lnode = Node(1)
+    l_4.Rnode = Node(2)
 
-  for t in [1, None, [1,2,3]]:
-    n0 = Node(t)
-    if n0.Value != t:
-      print("n0.Value '{0}' != {1}".format(t, n0.Value))
-    else:
-      print("Success: n0.Value '{0}'".format(n0.Value))
+    l_2 = Node(2)
+    l_2.Lnode = l_5
+    l_2.Rnode = l_4
 
+    r_4 = Node(4)
+    r_4.Lnode = Node(2)
+    r_4.Rnode = Node(1)
+
+    r_5 = Node(5)
+
+    r_2 = Node(2)
+    r_2.Lnode = r_4
+    r_2.Rnode = r_5
+
+    root = Node(3)
+    root.Lnode = l_2
+    root.Rnode = r_2
+
+    print(f"Is root a palinfromic tree: {root.IsPalindromicTree()}")
+    print(f"Is 'root'a symmetric tree: {Node.IsSymmetric(root)}")
+    print("... finished ...")
