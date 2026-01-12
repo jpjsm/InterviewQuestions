@@ -1,18 +1,18 @@
 #!/usr/bin/env python3
 from __future__ import annotations
-from typing import List
+from typing import List, Optional
 
 
 class Node:
     def __init__(self, value):
         self.Value = value
 
-        self.Lnode = None
-        self.Rnode = None
+        self.Lnode: Optional[Node] = None
+        self.Rnode: Optional[Node] = None
 
     @staticmethod
-    def IsSymmetric(node: Node) -> bool:
-        def mirror(l, r):
+    def IsSymmetric(node: Optional[Node]) -> bool:
+        def mirror(l: Optional[Node], r: Optional[Node]):
             if l is None and r is None:
                 return True
             if l is None or r is None:
