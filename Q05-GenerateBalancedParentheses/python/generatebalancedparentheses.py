@@ -6,30 +6,34 @@ DebugMode = False
 CacheEnabled = True
 ParenthesesGroups = {}
 
-def generatebalancedparentheses(n:int):
+
+def generatebalancedparentheses(n: int):
     if n < 0:
-        raise ArithmeticError("Argument '{0}' must be greater or equal to zero".format(n))
+        raise ArithmeticError(
+            "Argument '{0}' must be greater or equal to zero".format(n)
+        )
 
     if n == 0:
-        return ['']
+        return [""]
 
     if n == 1:
-        return ['()']
+        return ["()"]
 
     if CacheEnabled and n in ParenthesesGroups:
         return ParenthesesGroups[n]
 
     result = []
-    for i in range(0,n):
+    for i in range(0, n):
         for l in generatebalancedparentheses(i):
             for r in generatebalancedparentheses(n - 1 - i):
-                s = '(' + l + ')' + r
+                s = "(" + l + ")" + r
                 result.append(s)
-        
-    if CacheEnabled: 
+
+    if CacheEnabled:
         ParenthesesGroups[n] = result
-    
+
     return result
+
 
 if __name__ == "__main__":
     n = 16
@@ -38,5 +42,5 @@ if __name__ == "__main__":
         if n1 >= 0:
             n = n1
 
-    for i in range(0,n):
-        print("{0:2} => {1}".format(i,len(generatebalancedparentheses(i))))
+    for i in range(0, n):
+        print("{0:2} => {1:10,}".format(i, len(generatebalancedparentheses(i))))
