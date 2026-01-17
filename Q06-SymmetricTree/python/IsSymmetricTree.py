@@ -72,6 +72,6 @@ if __name__ == "__main__":
     root.Lnode = l_2
     root.Rnode = r_2
 
-    print(f"Is root a palinfromic tree: {root.IsPalindromicTree()}")
+    print(f"Is root a palindromic tree: {root.IsPalindromicTree()}")
     print(f"Is 'root'a symmetric tree: {Node.IsSymmetric(root)}")
     print("... finished ...")
