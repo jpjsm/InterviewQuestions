@@ -1,4 +1,4 @@
-## Find all anagram groups from a list of words
+# Find all anagram groups from a list of words
 
 Example:
 Given the following list of words:
