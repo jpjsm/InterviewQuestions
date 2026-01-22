@@ -58,7 +58,9 @@ class TextFormatter:
                     extra_spacing = base_spacing + " "
                     for i in range(current_spaces):
                         line.insert(
-                            2 * i + 1,
+                            2 * i + 1,  # Spaces are always in odd numbered items
+                            # small spacing to the left (smaller numbers)
+                            # extra spacing to the right (larger numbers)
                             (
                                 base_spacing
                                 if i < current_spaces - remaining_spacing
@@ -72,7 +74,7 @@ class TextFormatter:
                     current_spaces = 0
         # Check last line still in buffer
         if line:
-            content.append(" ".join(line))
+            content.append(" ".join(line))  # last line is always Left Justified
 
         return content
 
