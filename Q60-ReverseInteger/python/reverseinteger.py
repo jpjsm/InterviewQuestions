@@ -1,8 +1,18 @@
 def ReverseInteger(n: int) -> int:
-    return int(str(n)[::-1])
+    isnegative = False
+    if n < 0:
+        n = -n
+        isnegative = True
+
+    return (-1 if isnegative else 1) * int(str(n)[::-1])
 
 
 def ReverseInteger2(n: int) -> int:
+    isnegative = False
+    if n < 0:
+        n = -n
+        isnegative = True
+
     q, r = divmod(n, 10)
     R = r
     while q:
@@ -10,11 +20,11 @@ def ReverseInteger2(n: int) -> int:
         R *= 10
         R += r
 
-    return R
+    return (-1 if isnegative else 1) * R
 
 
 if __name__ == "__main__":
-    tests = [(123, 321), (1, 1), (0, 0), (98765, 56789)]
+    tests = [(123, 321), (1, 1), (0, 0), (98765, 56789), (-123, -321)]
     for n, e in tests:
         r = ReverseInteger(n)
         if r != e:
