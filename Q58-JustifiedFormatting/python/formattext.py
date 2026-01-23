@@ -86,7 +86,7 @@ if __name__ == "__main__":
     with open(
         "./justified_paragraph.txt", "r", encoding="utf-8", newline=None
     ) as infile:
-        expected_lines = [line[:-1] for line in infile.readlines()]
+        expected_lines = [line.rstrip("\n") for line in infile.readlines()]
 
     textformatter = TextFormatter(24, 64)
     textformatter.AddParagraphs([paragraph])
