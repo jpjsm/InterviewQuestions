@@ -1,4 +1,4 @@
-from typing import Any, List, Optional, Tuple
+from typing import Any, List, Optional, Tuple, Callable
 
 
 class Node:
@@ -30,14 +30,14 @@ def FromListToBinaryTree(l) -> Node | None:
     return node
 
 
-def Distance(a, b) -> float:
+def Distance(a: Any, b: Any) -> float:
     if isinstance(a, (int, float)) and isinstance(b, (int, float)):
         return abs(a - b)
 
     raise ValueError(f"Distance not defined for {type(a)} and {type(b)}")
 
 
-def ClosestInBTree(node, target, distance):
+def ClosestInBTree(node: Node, target: Any, distance: Callable[[Any, Any], float]):
     def _BTreeClosest(node, target, distance, min_distance, candidate):
         if node is None:
             return candidate
@@ -144,7 +144,11 @@ if __name__ == "__main__":
     l = [40, 63, 30, 21, 23, 32, 53]
     sorted_l = sorted(l)
     print(sorted_l)
-    root = FromListToBinaryTree(sorted_l)
+    root: Node | None = FromListToBinaryTree(sorted_l)
+
+    if root is None:
+        print("Error")
+        exit()
 
     print("Testing Closest")
     ClosestTests = [
