@@ -83,7 +83,7 @@ def ExistsInBTree(node, target) -> bool:
         return _BTreeExisits(node.Lnode, target)
 
     if node is None or not isinstance(node, Node) or target is None:
-        return False
+        raise ValueError("Invalid arguments.")
 
     if node.Value == target:
         return True
