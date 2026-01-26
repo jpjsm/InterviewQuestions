@@ -34,7 +34,7 @@ if __name__ == "__main__":
         elif len(args) == 1:
             l, t = (args[0], 1)
         else:
-            raise ValueError("Unexpected number of results!")
+            raise ValueError("Unexpected number of arguments!")
 
         r = SumUnitFractions(l, t)
         if r != expected:
