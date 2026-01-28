@@ -34,3 +34,6 @@ Return the numbers in the k-th row.
 | 3 | `[1, 3, 3, 1]` |
 | 6 | `[1, 6, 15, 20, 15, 6, 1]` |
 | 7 | `[1, 7, 21, 35, 35, 21, 7, 1]` |
+
+Try to find if thre's a more efficient way to get the k-th row than building the
+triangle.

@@ -3,6 +3,7 @@
 # Analysis
 
 ## Alternative A
+----------------
 The triangle can be built iteratively until the k-th row is generated
 The triangle can be initialized with the first three rows
   [
@@ -10,7 +11,14 @@ The triangle can be initialized with the first three rows
      [1, 1],
     [1, 2, 1]
   ]
+
+Next row items can be defined as:
+next_row[0] = 1
+next_row[i] = prev_row[i-1] + prev_row[i] ; for 0 < i < row_number
+next_row.append(1)
+
 ## Alternative B
+----------------
 Also, each row in the triangle correspond to the binomial coeficients of the
 power of the row... this could be an easier way to get those numbers, if we
 only need the k-th row.
