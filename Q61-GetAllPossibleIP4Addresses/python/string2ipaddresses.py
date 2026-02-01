@@ -22,8 +22,8 @@ def StringToIpAddresses(s: str) -> List[List[str]]:
 
         return results
 
-    if s == "" or len(s) > 12 or not all(c >= "0" and c <= "9" for c in s):
-        return []
+    if not isinstance(s,str) or s == "" or len(s) > 12 or not all(c >= "0" and c <= "9" for c in s):
+        raise ValueError("Invalid argument")
     return getaddresses(s, 3)
 
 
